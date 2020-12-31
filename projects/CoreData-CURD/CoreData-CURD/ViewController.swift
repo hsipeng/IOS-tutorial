@@ -34,7 +34,7 @@ class ViewController: UIViewController {
 
     lazy var tableView: UITableView = {
 //        let tableView = UITableView(frame: CGRect(x: 0, y: 400, width: self.view.frame.width, height: 100), style: UITableView.Style.plain)
-        let tableView = UITableView(frame: CGRect(x:0, y: 400, width: self.view.frame.width, height: 400))
+        let tableView = UITableView()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: dataCellID)
@@ -103,29 +103,28 @@ class ViewController: UIViewController {
         let stackView = UIStackView()
         stackView.addArrangedSubview(nameLabel)
         stackView.addArrangedSubview(nameInput)
-        stackView.frame = CGRect(x: 0, y: 44, width: self.view.frame.width, height: 100)
-        
+//        stackView.frame = CGRect(x: 0, y: 44, width: self.view.frame.width, height: 100)
         
         // 布局
         stackView.axis = .horizontal
         stackView.alignment = .center
         stackView.spacing = 8
         stackView.distribution = .fill
-        stackView.layoutMargins = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-        stackView.isLayoutMarginsRelativeArrangement = true
+//        stackView.layoutMargins = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+//        stackView.isLayoutMarginsRelativeArrangement = true
         
         
         let stackView2 = UIStackView()
         stackView2.addArrangedSubview(ageLabel)
         stackView2.addArrangedSubview(ageInput)
-        stackView2.frame = CGRect(x: 0, y: 144, width: self.view.frame.width, height: 100)
+//        stackView2.frame = CGRect(x: 0, y: 144, width: self.view.frame.width, height: 100)
 
         stackView2.axis = .horizontal
         stackView2.alignment = .center
         stackView2.spacing = 8
         stackView2.distribution = .fill
-        stackView2.layoutMargins = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-        stackView2.isLayoutMarginsRelativeArrangement = true
+//        stackView2.layoutMargins = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+//        stackView2.isLayoutMarginsRelativeArrangement = true
         
         
         
@@ -140,7 +139,7 @@ class ViewController: UIViewController {
         stackView3.addArrangedSubview(addBtn)
         stackView3.addArrangedSubview(refreshBtn)
         
-        stackView3.frame = CGRect(x: 0, y: 250, width: self.view.frame.width, height: 50)
+//        stackView3.frame = CGRect(x: 0, y: 250, width: self.view.frame.width, height: 50)
         
 //        let scrollView = UIScrollView()
 //        scrollView.frame = CGRect(x: 0, y: 44, width: self.view.frame.width, height: self.view.frame.height - 44)
@@ -154,6 +153,44 @@ class ViewController: UIViewController {
         self.view.addSubview(stackView2)
         self.view.addSubview(stackView3)
         self.view.addSubview(tableView)
+        
+        
+        // autoLayout 布局
+        let safeArea = self.view.safeAreaLayoutGuide
+        
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 20).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 20).isActive = true
+        stackView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        nameInput.translatesAutoresizingMaskIntoConstraints = false
+//        nameInput.widthAnchor.constraint(equalTo: nameLabel.widthAnchor, multiplier: 4).isActive = true
+//        nameInput.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: 20).isActive = true
+        safeArea.trailingAnchor.constraint(equalTo: nameInput.trailingAnchor, constant: 20).isActive = true
+        
+        
+        // stackview2
+        stackView2.translatesAutoresizingMaskIntoConstraints = false
+        stackView2.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 30).isActive = true
+        stackView2.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 20).isActive = true
+        stackView2.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        ageLabel.translatesAutoresizingMaskIntoConstraints = false
+        ageInput.translatesAutoresizingMaskIntoConstraints = false
+        safeArea.trailingAnchor.constraint(equalTo: ageInput.trailingAnchor, constant: 20).isActive = true
+        
+        // stackview3
+        stackView3.translatesAutoresizingMaskIntoConstraints = false
+        stackView3.topAnchor.constraint(equalTo: stackView2.bottomAnchor, constant: 30).isActive = true
+        stackView3.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 20).isActive = true
+        safeArea.trailingAnchor.constraint(equalTo: refreshBtn.trailingAnchor, constant: 20).isActive = true
+        
+        //tableview
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.topAnchor.constraint(equalTo: stackView3.bottomAnchor, constant: 20).isActive = true
+        tableView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 20).isActive = true
+        safeArea.bottomAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 0).isActive = true
+        safeArea.trailingAnchor.constraint(equalTo: tableView.trailingAnchor, constant: 20).isActive = true
+        
         
     }
     
@@ -173,7 +210,7 @@ class ViewController: UIViewController {
         dataArray = CoreDataManager.shared.getAllPerson()
         tableView.reloadData()
         
-        print("referesh btn pressed -------- :\n", dataArray)
+        print("referesh btn pressed -------- :\n"   )
     }
     
     private func resignKeyboard(){
