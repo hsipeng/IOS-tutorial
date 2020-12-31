@@ -8,16 +8,10 @@
 
 import UIKit
 
-class Person2 {
-    var name: String!
-    var age: Int16!
-}
-
-
 class ViewController: UIViewController {
     // 数据
     let dataCellID = "dataCellID"
-    var dataArray: [Person2] = [Person2]()
+    var dataArray: [Person] = [Person]()
     // name
     var nameLabel: UILabel!
     var nameInput: UITextField!
@@ -163,28 +157,23 @@ class ViewController: UIViewController {
         
     }
     
+    // 添加 btn
     @objc func onAddBtnPressd(sender: UIButton!){
         resignKeyboard()
         guard let nameString = nameInput.text else { return }
         guard let ageString = ageInput.text else { return }
         guard let age = Int16(ageString) else { return }
-        let p2 = Person2()
-        p2.name = nameString
-        p2.age = age
-        dataArray.append(p2)
-        tableView.reloadData()
+        CoreDataManager.shared.savePersonWith(name: nameString, age: age)
         print("add btn pressed ", nameString, age)
     }
     
+    // 刷新 btn
     @objc func onrefreshBtnPressd(sender: UIButton!){
         resignKeyboard()
-//        let p1 = Person2()
-//        p1.name = "AAa"
-//        p1.age = 10
-//        dataArray.append(p1)
+        dataArray = CoreDataManager.shared.getAllPerson()
         tableView.reloadData()
         
-        print("del btn pressed ", nameInput.text!, ageInput.text!)
+        print("referesh btn pressed -------- :\n", dataArray)
     }
     
     private func resignKeyboard(){
@@ -192,12 +181,15 @@ class ViewController: UIViewController {
         ageInput.resignFirstResponder()
     }
     
+    // 删除 btn
     @objc func onTableCellRemove(_ sender: UIButton!){
         resignKeyboard()
         let row = sender.tag
-        dataArray.remove(at: row)
+//        dataArray.remove(at: row)
+        let person = dataArray[row]
+        CoreDataManager.shared.deleteWith(name: person.name ?? "")
         tableView.reloadData()
-        print("table cell del btn pressed ,index: ", row)
+        print("table cell del btn pressed ,index: ", row, person)
     }
 }
 
