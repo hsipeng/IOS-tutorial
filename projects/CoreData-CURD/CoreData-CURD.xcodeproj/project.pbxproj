@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		16158154259D78F60024214A /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16158153259D78F60024214A /* PersonTableViewCell.swift */; };
+		16158156259DB74F0024214A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16158155259DB74F0024214A /* CoreDataManager.swift */; };
 		16EC2002259C750A005A46D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EC2001259C750A005A46D1 /* AppDelegate.swift */; };
 		16EC2004259C750A005A46D1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EC2003259C750A005A46D1 /* SceneDelegate.swift */; };
 		16EC2007259C750B005A46D1 /* CoreData_CURD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 16EC2005259C750B005A46D1 /* CoreData_CURD.xcdatamodeld */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		16158153259D78F60024214A /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
+		16158155259DB74F0024214A /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		16EC1FFE259C750A005A46D1 /* CoreData-CURD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoreData-CURD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		16EC2001259C750A005A46D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16EC2003259C750A005A46D1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +47,7 @@
 			isa = PBXGroup;
 			children = (
 				16EC2005259C750B005A46D1 /* CoreData_CURD.xcdatamodeld */,
+				16158155259DB74F0024214A /* CoreDataManager.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16158156259DB74F0024214A /* CoreDataManager.swift in Sources */,
 				16EC201B259C84A9005A46D1 /* ViewController.swift in Sources */,
 				16EC2002259C750A005A46D1 /* AppDelegate.swift in Sources */,
 				16EC2007259C750B005A46D1 /* CoreData_CURD.xcdatamodeld in Sources */,
