@@ -26,6 +26,15 @@ class BlockListViewController: UIViewController, UITableViewDelegate, UITableVie
     
     // MARK: - setup UI
     func setUpUI() {
+        
+        let messageBody = "红都百货x楼婷美专柜x.x节活动火热进行中。一年仅一次的最大活动力度！充值送："
+        let filterManage = FilterMLModelManager.shared
+        if(filterManage.needFilter(msg: messageBody)) {
+            NSLog("垃圾短信,过滤")
+        }else {
+            NSLog("不是垃圾短信，正常")
+        }
+        
         // 初始化
         senders = [String]();
         

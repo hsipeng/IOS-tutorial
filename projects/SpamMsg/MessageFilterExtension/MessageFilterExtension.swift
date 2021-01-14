@@ -11,7 +11,18 @@ import CoreData
 import os.log
 
 final class MessageFilterExtension: ILMessageFilterExtension {
-    let managedContext = CoreDataStorage.shared.context
+    
+    lazy var managedContext = { () -> NSManagedObjectContext in
+       let container = NSPersistentContainer(name: "SMSFilter")
+        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            if let error = error as NSError? {
+                fatalError("Unresolved error \(error), \(error.userInfo)")
+            }
+        })
+
+        let context = container.viewContext
+        return context
+    }()
     
     var blackList = [String]()
     var spamList = [String]()
@@ -132,6 +143,10 @@ extension MessageFilterExtension: ILMessageFilterQueryHandling {
             }
         }
         
+        let filterManage = FilterMLModelManager.shared
+        if(filterManage.needFilter(msg: messageBody)) {
+            return .filter
+        }
         // Replace with logic to perform offline check whether to filter first (if possible).
         return .allow
     }
@@ -140,5 +155,5 @@ extension MessageFilterExtension: ILMessageFilterQueryHandling {
         // Replace with logic to parse the HTTP response and data payload of `networkResponse` to return an action.
         return .none
     }
-
+    
 }

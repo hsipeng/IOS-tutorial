@@ -14,7 +14,10 @@
 		160A514F25B0446300BA5675 /* MessageFilterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160A514E25B0446300BA5675 /* MessageFilterExtension.swift */; };
 		160A515325B0446300BA5675 /* MessageFilterExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 160A514C25B0446300BA5675 /* MessageFilterExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		160A515925B044D200BA5675 /* SMSFilter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 160A513F25B02BCF00BA5675 /* SMSFilter.xcdatamodeld */; };
-		160A515A25B044D500BA5675 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160A514325B02CA000BA5675 /* CoreDataStorage.swift */; };
+		160A516025B0657F00BA5675 /* FilterMLModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160A515F25B0657F00BA5675 /* FilterMLModelManager.swift */; };
+		160A516125B0657F00BA5675 /* FilterMLModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160A515F25B0657F00BA5675 /* FilterMLModelManager.swift */; };
+		160A516525B07E9700BA5675 /* Filter.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 160A516425B07E9700BA5675 /* Filter.mlmodel */; };
+		160A516625B07E9700BA5675 /* Filter.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 160A516425B07E9700BA5675 /* Filter.mlmodel */; };
 		1686077625AEF660000A5AC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1686077525AEF660000A5AC7 /* AppDelegate.swift */; };
 		1686077825AEF660000A5AC7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1686077725AEF660000A5AC7 /* SceneDelegate.swift */; };
 		1686077C25AEF662000A5AC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1686077B25AEF662000A5AC7 /* Assets.xcassets */; };
@@ -56,6 +59,8 @@
 		160A514C25B0446300BA5675 /* MessageFilterExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MessageFilterExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		160A514E25B0446300BA5675 /* MessageFilterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageFilterExtension.swift; sourceTree = "<group>"; };
 		160A515025B0446300BA5675 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		160A515F25B0657F00BA5675 /* FilterMLModelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterMLModelManager.swift; sourceTree = "<group>"; };
+		160A516425B07E9700BA5675 /* Filter.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Filter.mlmodel; sourceTree = "<group>"; };
 		1686077225AEF660000A5AC7 /* SpamMsg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpamMsg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1686077525AEF660000A5AC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1686077725AEF660000A5AC7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +116,15 @@
 			path = MessageFilterExtension;
 			sourceTree = "<group>";
 		};
+		160A515B25B0643100BA5675 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				160A516425B07E9700BA5675 /* Filter.mlmodel */,
+				160A515F25B0657F00BA5675 /* FilterMLModelManager.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		1686076925AEF660000A5AC7 = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +146,7 @@
 		1686077425AEF660000A5AC7 /* SpamMsg */ = {
 			isa = PBXGroup;
 			children = (
+				160A515B25B0643100BA5675 /* model */,
 				160A514525B034DE00BA5675 /* Utilties */,
 				160A514225B02BEA00BA5675 /* CoreData */,
 				1686078925AEFC1F000A5AC7 /* BlockListViewController.swift */,
@@ -256,8 +271,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				160A515A25B044D500BA5675 /* CoreDataStorage.swift in Sources */,
+				160A516625B07E9700BA5675 /* Filter.mlmodel in Sources */,
 				160A514F25B0446300BA5675 /* MessageFilterExtension.swift in Sources */,
+				160A516125B0657F00BA5675 /* FilterMLModelManager.swift in Sources */,
 				160A515925B044D200BA5675 /* SMSFilter.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				160A516525B07E9700BA5675 /* Filter.mlmodel in Sources */,
 				160A513E25B0110B00BA5675 /* LayoutViewController.swift in Sources */,
 				1686077625AEF660000A5AC7 /* AppDelegate.swift in Sources */,
 				1686078A25AEFC1F000A5AC7 /* BlockListViewController.swift in Sources */,
@@ -273,6 +290,7 @@
 				1686077825AEF660000A5AC7 /* SceneDelegate.swift in Sources */,
 				1686078C25AEFC53000A5AC7 /* SpamViewController.swift in Sources */,
 				160A514425B02CA000BA5675 /* CoreDataStorage.swift in Sources */,
+				160A516025B0657F00BA5675 /* FilterMLModelManager.swift in Sources */,
 				160A514125B02BCF00BA5675 /* SMSFilter.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,7 +331,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -331,7 +349,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -465,7 +483,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cn.lirawx.SpamMsg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -485,7 +503,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cn.lirawx.SpamMsg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
