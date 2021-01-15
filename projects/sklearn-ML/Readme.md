@@ -13,8 +13,8 @@ pip install 'scikit-learn==0.19.2'
 首先运行`token_and_save_to_file.py`，分词保存结果 。
 
 `logisticRegression_fit.py` 训练自有的 LogisticRegression 并且保存到 `./model/LogisticRegression.pkl`
-`logisticRegression_sklearn_fit.py` 训练自有的 sklearn.linear_model.LogisticRegression 并且保存到 `./model/LogisticRegression_sklearn.pkl`
-`Naive_bayes_fit.py` 训练自有的 LogisticRegression 并且保存到 `./model/Bayes_sklearn.pkl`
+`logisticRegression_sklearn_fit.py` 训练sklearn.linear_model.LogisticRegression 并且保存到 `./model/LogisticRegression_sklearn.pkl`
+`Naive_bayes_fit.py` 训练 sklearn.Naive_bayes 并且保存到 `./model/Bayes_sklearn.pkl`
 
 `predict.py` 是进行预测短信是否需要过滤
 通过 model 路径导入模型进行预测
