@@ -20,3 +20,9 @@ pip install 'scikit-learn==0.19.2'
 通过 model 路径导入模型进行预测
 特征转换需要统一使用 vsm 中的 DictVectorizer
 这边只是预先输入了一些参数 实际使用的还是sklearn `from sklearn.feature_extraction import DictVectorizer`
+
+
+## coreml 转换示例
+
+coreml-scikit-example.py
+linear_model.ipynb
