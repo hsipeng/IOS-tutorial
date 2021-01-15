@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16097BF525B1950C00BC8830 /* SklearnLogistic.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1655BAD625B18A1300523241 /* SklearnLogistic.mlmodel */; };
 		160A513E25B0110B00BA5675 /* LayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160A513D25B0110B00BA5675 /* LayoutViewController.swift */; };
 		160A514125B02BCF00BA5675 /* SMSFilter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 160A513F25B02BCF00BA5675 /* SMSFilter.xcdatamodeld */; };
 		160A514425B02CA000BA5675 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160A514325B02CA000BA5675 /* CoreDataStorage.swift */; };
@@ -18,6 +19,9 @@
 		160A516125B0657F00BA5675 /* FilterMLModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160A515F25B0657F00BA5675 /* FilterMLModelManager.swift */; };
 		160A516525B07E9700BA5675 /* Filter.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 160A516425B07E9700BA5675 /* Filter.mlmodel */; };
 		160A516625B07E9700BA5675 /* Filter.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 160A516425B07E9700BA5675 /* Filter.mlmodel */; };
+		1655BAD725B18A1300523241 /* SklearnLogistic.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1655BAD625B18A1300523241 /* SklearnLogistic.mlmodel */; };
+		1655BAD925B18A3800523241 /* feature.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1655BAD825B18A3800523241 /* feature.txt */; };
+		1655BADB25B18A4B00523241 /* SMSSpamCollection.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1655BADA25B18A4B00523241 /* SMSSpamCollection.txt */; };
 		1686077625AEF660000A5AC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1686077525AEF660000A5AC7 /* AppDelegate.swift */; };
 		1686077825AEF660000A5AC7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1686077725AEF660000A5AC7 /* SceneDelegate.swift */; };
 		1686077C25AEF662000A5AC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1686077B25AEF662000A5AC7 /* Assets.xcassets */; };
@@ -61,6 +65,9 @@
 		160A515025B0446300BA5675 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		160A515F25B0657F00BA5675 /* FilterMLModelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterMLModelManager.swift; sourceTree = "<group>"; };
 		160A516425B07E9700BA5675 /* Filter.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Filter.mlmodel; sourceTree = "<group>"; };
+		1655BAD625B18A1300523241 /* SklearnLogistic.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = SklearnLogistic.mlmodel; path = "../../../sklearn-ML/SklearnLogistic.mlmodel"; sourceTree = "<group>"; };
+		1655BAD825B18A3800523241 /* feature.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = feature.txt; path = "../../../sklearn-ML/data/feature.txt"; sourceTree = "<group>"; };
+		1655BADA25B18A4B00523241 /* SMSSpamCollection.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SMSSpamCollection.txt; path = "../../../sklearn-ML/data/SMSSpamCollection.txt"; sourceTree = "<group>"; };
 		1686077225AEF660000A5AC7 /* SpamMsg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpamMsg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1686077525AEF660000A5AC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1686077725AEF660000A5AC7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +127,9 @@
 			isa = PBXGroup;
 			children = (
 				160A516425B07E9700BA5675 /* Filter.mlmodel */,
+				1655BAD625B18A1300523241 /* SklearnLogistic.mlmodel */,
+				1655BADA25B18A4B00523241 /* SMSSpamCollection.txt */,
+				1655BAD825B18A3800523241 /* feature.txt */,
 				160A515F25B0657F00BA5675 /* FilterMLModelManager.swift */,
 			);
 			path = model;
@@ -259,8 +269,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1686078225AEF662000A5AC7 /* LaunchScreen.storyboard in Resources */,
+				1655BAD925B18A3800523241 /* feature.txt in Resources */,
 				1686077F25AEF662000A5AC7 /* Preview Assets.xcassets in Resources */,
 				1686077C25AEF662000A5AC7 /* Assets.xcassets in Resources */,
+				1655BADB25B18A4B00523241 /* SMSSpamCollection.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				160A516625B07E9700BA5675 /* Filter.mlmodel in Sources */,
+				16097BF525B1950C00BC8830 /* SklearnLogistic.mlmodel in Sources */,
 				160A514F25B0446300BA5675 /* MessageFilterExtension.swift in Sources */,
 				160A516125B0657F00BA5675 /* FilterMLModelManager.swift in Sources */,
 				160A515925B044D200BA5675 /* SMSFilter.xcdatamodeld in Sources */,
@@ -283,6 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				160A516525B07E9700BA5675 /* Filter.mlmodel in Sources */,
+				1655BAD725B18A1300523241 /* SklearnLogistic.mlmodel in Sources */,
 				160A513E25B0110B00BA5675 /* LayoutViewController.swift in Sources */,
 				1686077625AEF660000A5AC7 /* AppDelegate.swift in Sources */,
 				1686078A25AEFC1F000A5AC7 /* BlockListViewController.swift in Sources */,
@@ -331,7 +345,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -349,7 +363,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
