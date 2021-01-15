@@ -87,3 +87,16 @@ class ModelTest(object):
 
         if save_cls_path:
             joblib.dump(cls, save_cls_path)
+
+class FileUtils(object):
+    # 保存文件
+    @staticmethod
+    def text_save(filename, data):
+        file = open(filename, 'a')
+
+        for item in data:
+            print(item)
+            file.write(item + '\n')
+
+        file.close()
+        print('文件保存成功')
