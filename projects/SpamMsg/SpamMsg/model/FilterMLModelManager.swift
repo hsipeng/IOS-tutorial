@@ -81,7 +81,7 @@ class FilterMLModelManager: NSObject {
         let vec = tfidf(sms: msg)
         do{
             let sklearnLc = SklearnLogistic()
-            let prediction = try sklearnLc.prediction(message: vec).prediction
+            let prediction = try sklearnLc.prediction(message: vec).label
             re = prediction
             print("prediction: \(prediction)")
         }catch{

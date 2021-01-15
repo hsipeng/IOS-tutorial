@@ -14,12 +14,12 @@ if __name__ == '__main__':
     # print('feature: {}\n'.format(features))
     # FileUtils.text_save('./data/feature.txt', features)
     cls = joblib.load('./model/LogisticRegression_sklearn.pkl')
-    coreml_model = convert(cls, "message", "prediction")
+    coreml_model = convert(cls, "message", "label")
     coreml_model.author = "lirawx"  
     print(coreml_model.author)
     coreml_model.license = 'CC0'
     coreml_model.short_description = "spam msg with a linear model!"  
     coreml_model.input_description["message"] = "a msg"  
-    coreml_model.output_description["prediction"] = "a real number"
+    coreml_model.output_description["label"] = "a real number"
     print(coreml_model.short_description)
     coreml_model.save('SklearnLogistic.mlmodel')
