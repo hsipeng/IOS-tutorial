@@ -114,7 +114,7 @@ class BlockListViewController: UIViewController, UITableViewDelegate, UITableVie
         label.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 10).isActive = true
         label.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 10).isActive = true
         safeArea.trailingAnchor.constraint(equalTo: label.trailingAnchor, constant: 10).isActive = true
-        label.widthAnchor.constraint(equalTo: safeArea.widthAnchor).isActive = true
+//        label.widthAnchor.constraint(equalTo: safeArea.widthAnchor).isActive = true
         label.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
