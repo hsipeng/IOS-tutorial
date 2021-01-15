@@ -34,7 +34,7 @@ class BlockListViewController: UIViewController, UITableViewDelegate, UITableVie
         }else {
             NSLog("不是垃圾短信，正常")
         }
-        
+        filterManage.judgeMessageWithSklearn(msg: inputMsg)
         // 初始化
         senders = [String]();
         
