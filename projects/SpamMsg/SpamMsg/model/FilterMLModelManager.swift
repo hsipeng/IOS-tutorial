@@ -30,8 +30,8 @@ class FilterMLModelManager: NSObject {
     
     // MARK:- tfidf
     private func tfidf(sms: String) -> MLMultiArray{
-        let wordsFile = Bundle.main.path(forResource: "feature", ofType: "txt")
-        let smsFile = Bundle.main.path(forResource: "SMSSpamCollection", ofType: "txt")
+        let wordsFile = Bundle.main.path(forResource: "feature", ofType: "txt") // 训练模型特征数据
+        let smsFile = Bundle.main.path(forResource: "SMSSpamCollection", ofType: "txt") // 先有的短信数据
         do {
             let wordsFileText = try String(contentsOfFile: wordsFile!, encoding: String.Encoding.utf8)
             var wordsData = wordsFileText.components(separatedBy: .newlines)
