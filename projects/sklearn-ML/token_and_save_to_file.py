@@ -23,7 +23,7 @@ def read_train_data():
     return data, target
 
 
-def save_tokenlization_result(data, target, file_path='./data/test_tags_token_results'):
+def save_tokenlization_result(data, target, file_path='./data/tags_token_results'):
     with codecs.open(file_path, 'w', 'utf-8') as f:
         for x in data:
             f.write(' '.join(x) + '\n')
@@ -51,7 +51,7 @@ if __name__ == '__main__':
     #     data2words.append(temp)
     # save_tokenlization_result(data2words, target)
 
-    with codecs.open('./data/test_tags_token_results', 'r', 'utf-8') as f:
+    with codecs.open('./data/tags_token_results', 'r', 'utf-8') as f:
         data = [line.strip().split() for line in f.read().split('\n')]
         if not data[-1]: data.pop()
         t = [Counter(d) for d in data]  # 每一行为一个短信， 值就是TF
