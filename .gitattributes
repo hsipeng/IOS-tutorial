@@ -1,4 +1,4 @@
-*.mlmodel filter=lfs diff=lfs merge=lfs -text
+**/*.mlmodel filter=lfs diff=lfs merge=lfs -text
 projects/SpamMsgClassfier/CreateMLModel-with-Swift.playground/Resources/data.json filter=lfs diff=lfs merge=lfs -text
 projects/sklearn-ML/data/* filter=lfs diff=lfs merge=lfs -text
-*.h5 filter=lfs diff=lfs merge=lfs -text
+**/*.h5 filter=lfs diff=lfs merge=lfs -text
